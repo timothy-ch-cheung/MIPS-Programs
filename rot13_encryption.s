@@ -64,7 +64,7 @@ validate:
     lb $t1 ($a0)
     beq $t1 $zero valid_string
     
-    subi $t2 $t1 66 # is the character ascii code >= 65
+    subi $t2 $t1 64 # is the character ascii code >= 65
     blez $t2 invalid_string#AND
     subi $t2  $t1 123 # is the character ascii code <= 122 
     bgez $t2 invalid_string
@@ -96,7 +96,7 @@ rot_13:
     j add_lowercase
 add_uppercase:
     subi $t2 $t1 77
-    blez $t2 incrememnt_13
+    blez $t2 increment_13
     subi $t1 $t1 13
     j next_char
 add_lowercase:
